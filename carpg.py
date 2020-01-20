@@ -1,4 +1,5 @@
 class Car:
+    # Class which defines all stats and descriptions of a car
 
     def __init__(self, make, model, year, hrspr, weight, pr):
         self.make = make
@@ -9,11 +10,13 @@ class Car:
         self.pr = pr
 
     def carstats(self):
+        # Car stats complete description
         car_stats = (f"Your {current.year} {current.make} {current.model} weighs {current.weight} lbs" +
         f" and has {current.hrspr} Hrspr. It has a PR of {current.pr}.")
         return car_stats
 
     def cardesc(self):
+        # Complete car description
         car_desc = f"{current.year} {current.make} {current.model}"
         return car_desc
 
