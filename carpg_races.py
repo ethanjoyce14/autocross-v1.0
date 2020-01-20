@@ -4,11 +4,12 @@ import carpg_autoshop
 import random
 
 class Race:
-
+    # A class that grants the race functionality
     def __init__(self, totaltime):
         self.totaltime = totaltime
 
     def racestart(self):
+        # Start of the race
         if carpg.current == '':
             print("You don't have a car to race with\n")
             carpgmenu.acmenu.main()
@@ -17,7 +18,7 @@ class Race:
             self.corner1()
 
     def corner1(self):
-        
+        # Corner 1 data
         response = input("You accelerate through the starting line. There is an easy left corner approaching. Take it fast (risky) or slow (safe)?\n")
         risky_corner = random.randint(1, 6)
         if response == 'safe':
@@ -34,7 +35,7 @@ class Race:
             self.corner1()
 
     def corner2(self):
-        
+        # Corner 2 data
         response = input("You exit turn 1. There is a medium right corner approaching. Take it fast (risky) or slow (safe)?\n")
         risky_corner = random.randint(1, 6)
         if response == 'safe':
@@ -51,7 +52,7 @@ class Race:
             self.corner2()
 
     def corner3(self):
-        
+        # Corner 3 data
         response = input("You exit turn 2. There is a 90 degree left corner approaching. Take it fast (risky) or slow (safe)?\n")
         risky_corner = random.randint(1, 6)
         if response == 'safe':
@@ -68,7 +69,7 @@ class Race:
             self.corner3()
 
     def corner4(self):
-        
+        # Corner 4 data
         response = input("You exit turn 3. There is fast left corner approaching. Take it fast (risky) or slow (safe)?\n")
         risky_corner = random.randint(1, 6)
         if response == 'safe':
@@ -85,7 +86,7 @@ class Race:
             self.corner4()
 
     def corner5(self):
-        
+        # Corner 5 data
         response = input("You exit turn 4. There is a narrow hairpin right corner approaching. Take it fast (risky) or slow (safe)?\n")
         risky_corner = random.randint(1, 6)
         if response == 'safe':
@@ -102,6 +103,7 @@ class Race:
             self.corner5()
 
     def race_end(self):
+        # End of race data, payments, etc.
         print(f"Your time was {self.totaltime} seconds.\n")
         placement = 1
         opponent1time = random.randint(57, 59)
@@ -124,10 +126,12 @@ class Race:
             carpgmenu.acmenu.main()
 
     def crash(self):
+        # Crash data
         print("You crashed. You recieve a DNF and your car is totalled. You must pay 250 Credits in repairs.\n")
         carpg_autoshop.shop.playercr -= 250
         carpgmenu.acmenu.main()
 
+# Initial race times based on PR of current vehicle
 pr20 = Race(60)
 pr22 = Race(59.5)
 pr24 = Race(59)
