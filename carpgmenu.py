@@ -2,33 +2,37 @@ import carpg
 import carpg_races
 import carpg_autoshop
 
+# Main menu options
 mainmenu = [
     'Race',
     'Garage',
     'Autoshop',
     'Quit']
 
+# List of currently available cars
 carlist = [
     '2002 Honda Civic SI'
     ]
 
+# List of currently available tracks
 tracklist = [
     'Parking Lot'
     ]
 
+# List of autoshop functionalities
 options = [
     'Cars',
     'Parts'
     ]
 
 class Menu:
-
+    # Class which grants a main menu functionality
     def __init__(self, enable):
 
         self.enable = enable
 
     def main(self):
-
+        # Main menu data
         print(f"\nAUTOCROSS:\n")
         
         for index, value in enumerate(mainmenu, 1):
@@ -57,6 +61,7 @@ class Menu:
 
 
     def garage(self):
+        # Garage menu data, vehicle selection
         print("GARAGE:\n")
 
         for car in carlist:
@@ -102,6 +107,7 @@ class Menu:
             self.garage()
 
     def race(self):
+        # Race menu data leading to race start
         print("TRACKS:\n")
         
         for index, value in enumerate(tracklist, 1):
@@ -130,6 +136,7 @@ class Menu:
             self.race()
 
     def autoshop(self):
+        # Autoshop menu data, current Credits, options leading to auto shops
         print("AUTOSHOP:\n")
         print(f"You currently have {carpg_autoshop.shop.playercr} Credits. You are currently driving your {carpg.current.cardesc()}.\n")
         for index, value in enumerate(options, 1):
